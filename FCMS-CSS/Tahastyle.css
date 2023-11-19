@@ -1,0 +1,447 @@
+* {
+
+  margin: 0;
+  box-sizing: border-box;
+
+
+}
+
+
+.homenav {
+  background-image: url(../FCMS-Assets/images/hero-slider-1.jpg);
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+
+}
+
+
+
+.info {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: scale(1);
+  /* Start at its normal size */
+}
+
+.fadeIn {
+  animation: fadeInScale 1s forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    /* At the start of the animation, the text will be transparent */
+    transform: scale(0.95);
+    /* Start a bit smaller */
+  }
+
+  to {
+    opacity: 1;
+    /* At the end of the animation, the text will be fully visible */
+    transform: scale(1);
+    /* At the end of the animation, the text will be at its normal size */
+  }
+}
+
+h4 {
+  color: white;
+  font-size: 45px;
+  font-family: sans-serif;
+}
+
+.logolink {
+  margin-left: 40px;
+}
+
+h5 {
+  padding-top: 40px;
+  color: white;
+  font-family: verdana;
+  font-size: 16px;
+}
+
+/**
+Menu Section
+**/
+
+.Menudiv {
+  background-color: #000000;
+}
+
+.menutext1 {
+  padding-top: 10px;
+
+  color: goldenrod;
+  text-align: center;
+  font-size: 16px;
+  
+}
+
+.section-text {
+  color: #e0e0e0;
+  text-align: center;
+  padding-top: 10px;
+  padding-left: 350px;
+  padding-right: 350px;
+  padding-bottom: 10px;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  padding-bottom: 100px;
+}
+
+.menutext2 {
+  color: #e0e0e0;
+  text-align: center;
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
+/* General styling for the section */
+.section.service {
+  background-color: #000000;
+  padding: 50px 0;
+}
+
+/* Styling for the grid list containing the service cards */
+.grid-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  list-style: none;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/* Styling for each service card */
+.service-card {
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-grow: 1;
+  max-width: 280px;
+  box-sizing: border-box;
+}
+
+/* Styling for the image within the card */
+.service-card .img-cover {
+  display: block;
+  width: 350px;
+  height: 300px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .img-cover {
+  transform: scale(1.1);
+}
+
+/* Styling for the card content */
+.card-content {
+  padding: 20px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.card-content .card-title a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+}
+
+.card-content .card-title a:hover {
+  color: #e0e0e0;
+}
+
+/* Styling for the card title */
+.title-4 {
+  margin: 0;
+
+}
+
+
+
+
+.about-section {
+  background-color: #171616;
+  /* Dark Grey Background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.about-image {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.about-image img {
+  max-width: 180%;
+  height: 180%;
+  border-radius: 8px;
+}
+
+.about-content {
+  flex: 2;
+  padding: 0 20px;
+  color: #e0e0e0;
+  /* Light Grey Text Color */
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  /* Choose a suitable font */
+  text-align: center;
+  padding-left: 300px;
+}
+
+.about-content h2 {
+  color: goldenrod;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 18px;
+}
+
+.team-section {
+  background-color: black;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 32px;
+  margin-bottom: 50px;
+  color: goldenrod;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* This will ensure that there is space between each member */
+  gap: 20px;
+  max-width: 660px;
+  /* This width will accommodate 3 members with a width of 200px each and a gap of 20px between them */
+  margin: 0 auto;
+  /* Centering the container */
+}
+
+.team-member {
+  flex: 0 0 calc(33.3333% - 20px);
+  /* This ensures each member takes up one-third of the container width minus the gap */
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.team-member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay span {
+  color: white;
+  font-size: 18px;
+  /* Increased size for better readability on larger circles */
+  text-transform: uppercase;
+}
+
+.team-member:hover .overlay {
+  opacity: 1;
+}
+
+/* Contact Footer */
+
+.footerabove {
+  background-image: url('../FCMS-Assets/images/footer-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px 0;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-icons img {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+}
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.user-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.user-option {
+  width: 30%;
+  height: 150px;
+  border: 2px solid #e0e0e0;
+  padding: 50px;
+  padding-bottom: 70px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Semi-transparent dark background for readability */
+  transition: background-color 0.3s;
+}
+
+.user-option:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Darker background on hover */
+}
+
+button.login,
+button.signup {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  background-color: goldenrod;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+
+}
+
+button.login:hover,
+button.signup:hover {
+  background-color: goldenrod;
+}
+
+.wimg {
+  width: 100px;
+  height: 100px;
+}
+
+.contact-icons img {
+  width: 50px;
+  /* Set the desired width */
+  height: 50px;
+  /* Set the desired height */
+  margin: 0 10px;
+  object-fit: cover;
+  /* This ensures that images retain their aspect ratio */
+}
+
+.btn-style {
+  background-color: goldenrod;
+  color: white;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  text-decoration: none;
+  border: 2px dotted transparent;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 10px;
+  transition: transform .3s;
+  
+}
+
+/* test*/
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+.footer {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}

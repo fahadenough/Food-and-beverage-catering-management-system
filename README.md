@@ -1,9 +1,4 @@
-# Food-and-beverage-catering-management-system
-A group uni project about catering management system with three user profiles namely staff, admin and user. 
-
-
-Certainly! Below is a basic README template for your Food and Beverage Catering Management System on GitHub. You can customize it further based on your specific project details:
-
+# FCMS---Food-Catering-Management-Service
 Food and Beverage Catering Management System
 Overview
 This is a web-based catering management system developed using HTML, CSS, JavaScript, and PHP. The system utilizes XAMPP for the local development environment and PHPMyAdmin for the database.
@@ -42,3 +37,8 @@ $dbName     = "your_database_name";
 Run the Application:
 
 Open your browser and navigate to the project folder.
+Usage
+Register a new user or log in with existing credentials.
+Explore the menu and add items to the cart.
+Place an order and view order history.
+And more.

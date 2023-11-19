@@ -1,0 +1,262 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+/* Content Styling */
+.hcontent {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    margin-top: 50px;
+}
+
+/* Center the fieldset with a width of 500px */
+fieldset {
+    background-color: #553f05;
+    border: none;
+    padding: 20px;
+    margin: 20px auto;
+    /* Center the fieldset horizontally */
+    border-radius: 10px;
+    width: 500px;
+    text-align: center;
+}
+
+/* Legend Styling */
+legend {
+    font-weight: bold;
+    font-size: 20px;
+    color: #f1efd3;
+    text-align: center;
+}
+
+/* Labels styling */
+label {
+    font-weight: bold;
+}
+
+/* Style for text and password inputs */
+input[type="text"],
+input[type="password"] {
+    background-color: #ffe4b2;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Button Container */
+.button-container {
+    text-align: center;
+    /* Center align the buttons horizontally */
+}
+
+
+
+/* Style for proceed and resret buttons */
+button[type="submit"],
+button[type="reset"] {
+    background-color: #ee9b0b;
+    color: #0b0707;
+    width: 160px;
+    height: 40px;
+    margin: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+/* Hover effect on the buttons */
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+    background-color: #f3e70d;
+    color: #000;
+}
+
+/* @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+/* Responsive styles (for screens 768px and below) */
+@media (max-width: 768px) {
+    .general-layout {
+        padding: 10px;
+    }
+
+    fieldset {
+        padding: 15px;
+        width: 100%;
+    }
+
+    /* Adjusted padding for text and password inputs */
+    input[type="text"],
+    input[type="password"] {
+        padding: 8px;
+    }
+
+    legend {
+        font-size: 18px;
+    }
+}
+
+@keyframes popup {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+
+.footer {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    background: #000000;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+/* CSS for the chart container and the SVG canvas */
+#chart-container {
+    width: 700px;
+    margin: 40px auto;
+    background: linear-gradient(to right, #f0e4d7, #e9d2af);
+    /* Smooth gradient background */
+    border: 1px solid #423e3b;
+    /* Subtle border color */
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+    border-radius: 8px;
+    /* Slightly rounded corners */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transitions for hover effects */
+    margin-bottom: 40px;
+}
+
+#chart-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* More pronounced shadow on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect on hover */
+}
+
+#bar-chart {
+    max-width: 700px;
+    margin: auto;
+    height: 530px;
+    display: block;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #d9a85c, #e0b374);
+    /* Warm gradient for the chart background */
+    border-radius: 4px;
+    /* Slightly rounded corners for the chart */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Inner shadow for depth */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transitions for effects */
+}
+
+/* Add some animation to your dots for when they appear */
+.dot {
+    /* Assuming .dot is the class for your scatterplot points */
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+    animation: fadeInDots 1.2s forwards;
+    /* Animation to fade in the dots */
+}
+
+@keyframes fadeInDots {
+    to {
+        opacity: 1;
+    }
+}
+
+/* CSS for the bars on mouseover */
+rect:hover {
+    fill: #bcdde0;
+    cursor: pointer;
+}
+
+/* CSS for the tooltip */
+.tooltip {
+    position: absolute;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: rgb(5, 95, 211);
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.line {
+    fill: none;
+    stroke: #000;
+    stroke-width: 2px;
+}
+
+
+/* Initial styles */
+.page-description {
+    font-size: 1.25rem;
+    color: #e8e1e1;
+    /* Adjust the color to fit your scheme */
+    text-align: center;
+    margin: 20px 40px;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    /* Start with the text fully transparent */
+    transform: translateY(-20px);
+    /* Start slightly above the final position */
+    transition: all 0.5s ease-in-out;
+}
+
+/* Keyframes for the fade-in-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Trigger the animation when the page loads */
+.page-description {
+    animation: fadeInUp 1s ease forwards;
+}

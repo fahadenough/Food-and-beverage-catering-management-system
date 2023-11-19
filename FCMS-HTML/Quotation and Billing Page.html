@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotation and Billing</title>
+    <link rel="stylesheet" href="../FCMS-Assets/Main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            display:flex;
+            align-items: center;
+            flex-direction: column;
+            min-height:100vh;
+            margin: 0;
+            padding: 0;
+            background-image: url(../FCMS-Assets/images/hero-slider-1.jpg);
+        }
+
+        .container {
+            position: relative;
+            width: 40%;
+            max-width: 40%;
+            margin-top: 120px;
+            margin-bottom: 30px;
+            padding: 30px;
+            background-color: black;
+            box-shadow: 0 0 10px white(0, 0, 0, 0.1);
+            border-radius: 15px;
+            border: 2px solid #FFD100;
+        }
+
+        .container h3{
+            margin-top: 25px;
+        }
+        
+        .container span{
+            color:white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+            border: 1px solid #FFD100;
+            margin-bottom: 40px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            color: white;
+            font-size: 18px;
+            border: 1px solid #FFD100;
+        }
+
+        th {
+            background-color: #202020;
+            color: #FFD100;
+            font-size: 18px;
+            border: 1px solid #FFD100;
+        }
+        table span{ 
+            float: right;
+        }
+        
+        .menu-name span{
+            float: left;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: space-between; 
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .button-container button {
+            background-color: #FFD100;
+            color: black;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button-container button:hover {
+            background-color: #FFEE32;
+            color: #333533;
+        }
+
+        .container .button-container {
+            display: flex; 
+        }
+
+        
+        /* Add the new CSS for the two tables */
+        .order-summary-table {
+            margin-bottom: 20px;
+            border: 2px solid black;
+        }
+
+        .menu-selection-table {
+            border: 2px solid white;
+        }
+
+        /* Style for the three columns */
+        .menu-selection-table th {
+            background-color: #202020;
+        }
+
+        .menu-selection-table td {
+            padding: 10px;
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+        .footer {
+        margin-top: auto;
+        position: relative;
+        width: 100%;
+        background: #000000;
+        min-height: 100px;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        }
+
+        .social-icon,
+        .menu {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        flex-wrap: wrap;
+        }
+
+        .social-icon__item,
+        .menu__item {
+        list-style: none;
+        }
+
+        .social-icon__link {
+        font-size: 2rem;
+        color: #fff;
+        margin: 0 10px;
+        display: inline-block;
+        transition: 0.5s;
+        }
+        .social-icon__link:hover {
+        transform: translateY(-10px);
+        }
+
+        .menu__link {
+        font-size: 1.2rem;
+        color: #fff;
+        margin: 0 10px;
+        display: inline-block;
+        transition: 0.5s;
+        text-decoration: none;
+        opacity: 0.75;
+        font-weight: 300;
+        }
+
+        .menu__link:hover {
+        opacity: 1;
+        }
+
+        .footer p {
+        color: #fff;
+        margin: 15px 0 10px 0;
+        font-size: 1rem;
+        font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="logolink">
+            <img src="../FCMS-Assets/images/culinarycue.png" width="100" height="60" alt="CulinaryCue - Home">
+        </a>
+        <ul>
+            <li><a href="../FCMS-HTML/TahaIndex.html">Home</a></li>
+            <li><a href="../FCMS-PHP/menu.php">Menu</a></li>
+            <li><a href="../FCMS-HTML/TahaIndex.html">About</a></li>
+            <li><a href="../FCMS-HTML/TahaIndex.html">Our Team</a></li>
+            <li><a href="../FCMS-HTML/TahaIndex.html">Contact</a></li>
+        </ul>
+        <a href="" class="registrationbutton">Login</a>
+    </nav>
+        <div class="container">
+            <h1>Quotation and Billing</h1>
+            <!-- Include your quotation and billing content here -->
+            <h3>Name: <span id="name"></span></h3>
+            <h3>Event Type: <span id="event-type"></span></h3>
+            <h3>Event Time: <span id="event-time"></span></h3>
+            <h3>Event Date: <span id="event-date"></span></h3>
+            <h3>Menu Id: <span id="menu-id"></span></h3>
+            <h3>Delivery Address: <span id="delivery-address"></span></h3>
+            <!-- Create a form to submit the data to the Payment Gateway -->
+            <form id="payment-form" action="../FCMS-PHP/Paymentgateway.php" method="GET">
+                <!-- Hidden input fields to store the data -->
+                <input type="hidden" name="name" id="name-input">
+                <input type="hidden" name="eventType" id="event-type-input">
+                <input type="hidden" name="eventTime" id="event-time-input">
+                <input type="hidden" name="eventDate" id="event-date-input">
+                <input type="hidden" name="deliveryAddress" id="delivery-address-input">
+                <input type="hidden" name="attendees" id="attendees-input">
+                <input type="hidden" name="menuId" id="menu-id-input">
+                <input type="hidden" name="menuName" id="menu-name-input">
+                <input type="hidden" name="menuPrice" id="menu-price-input">
+                <input type="hidden" name="totalPrice" id="total-price-input">
+                <table>
+                    <br>
+                    <br>
+                    <thead>
+                        <tr>
+                            <th>Menu Item</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="menu-name">
+                                    <span id="menu-name"></span>
+                                </div>
+                            </td>
+                            <td>
+                                <span id="attendees"></span>
+                            </td>
+                            <td>RM <span id="menu-price"></span></td>
+                            <td>RM <span id="total-price"></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Tax (7%):</td>
+                            <td colspan="2">RM <span id="tax-price"></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Total:</td>
+                            <td colspan="2">RM <span id="tax-total"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- Button to submit the form -->
+                <div class="button-container">
+                    <button type="button" class="go-back" onclick="goBack()">Go Back</button>
+                    <button type="button" onclick="submitForm()">Proceed To Payment</button>
+                </div>
+                
+            </form>
+            
+        </div>
+        
+        </div>
+        <footer class="footer">
+            <ul class="social-icon">
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+            </ul>
+            <ul class="menu">
+                <li class="menu__item"><a class="menu__link" href="#homenav">Home</a></li>
+                <li class="menu__item"><a class="menu__link" href="#NavMenu">Menu</a></li>
+                <li class="menu__item"><a class="menu__link" href="#Navabout">About</a></li>
+                <li class="menu__item"><a class="menu__link" href="#Navteam">Our Team</a></li>
+                <li class="menu__item"><a class="menu__link" href="#Navcontact">Contact</a></li>
+            </ul>
+            
+        </footer>
+    
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="../FCMS-JavaScripts/quotationScript.js"></script>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <link rel="stylesheet" href="../FCMS-Assets/Main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Additional CSS for this specific page */
+        body {
+            display:flex;
+            flex-direction: column;
+            min-height:100vh;
+            margin: 0;
+            padding: 0;
+            background-image: url(../FCMS-Assets/images/hero-slider-1.jpg);
+        }
+
+        .container {
+            width: 40%;
+            max-width: 40%;
+            background-color: black;
+            padding: 5px;
+            border-radius: 15px;
+            border: 1px solid #FFD100;
+            margin-top: 120px;
+            margin-bottom: auto;
+        }
+
+        .order-summary-box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+        }
+
+        .order-summary-box h2 {
+            text-align: left;
+        }
+
+        .order-summary-box h3 {
+            text-align: left;
+        }
+
+        .order-summary-box p {
+            text-align: left;
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .customer-details{
+            margin-bottom: 10px;
+        }
+
+        .menu-details {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-image {
+            flex: 1;
+            margin-right: 20px; /* Adjust the margin as needed */
+        }
+
+        .menu-image img {
+            width: 100%; /* Ensure the image takes 100% width of its container */
+        }
+
+        .menu-info {
+            flex: 2;
+            text-align: left;
+        }
+
+        .order-total {
+            text-align: left;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .order-summary-box span {
+            float: right;
+            color: white;
+        }
+
+        .order-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .order-buttons button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #FFD100;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .order-buttons button:hover {
+            background-color: #FFEE32;
+            color: #333533;
+        }
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+        .footer {
+        margin-top: 50px;
+        position: relative;
+        width: 100%;
+        background: #000000;
+        min-height: 100px;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        }
+
+        .social-icon,
+        .menu {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        flex-wrap: wrap;
+        }
+
+        .social-icon__item,
+        .menu__item {
+        list-style: none;
+        }
+
+        .social-icon__link {
+        font-size: 2rem;
+        color: #fff;
+        margin: 0 10px;
+        display: inline-block;
+        transition: 0.5s;
+        }
+        .social-icon__link:hover {
+        transform: translateY(-10px);
+        }
+
+        .menu__link {
+        font-size: 1.2rem;
+        color: #fff;
+        margin: 0 10px;
+        display: inline-block;
+        transition: 0.5s;
+        text-decoration: none;
+        opacity: 0.75;
+        font-weight: 300;
+        }
+
+        .menu__link:hover {
+        opacity: 1;
+        }
+
+        .footer p {
+        color: #fff;
+        margin: 15px 0 10px 0;
+        font-size: 1rem;
+        font-weight: 300;
+        }
+    </style>
+</head>
+
+<body class="">
+
+  
+    <nav>
+        <a href="#" class="logolink">
+            <img src="../FCMS-Assets/images/culinarycue.png" width="100" height="60" alt="CulinaryCue - Home">
+        </a>
+        <ul>
+            <li><a href="../FCMS-HTML/TahaIndex.html">Home</a></li>
+            <li><a href="../FCMS-PHP/menu.php">Menu</a></li>
+            <li><a href="../FCMS-HTML/TahaIndex.html">About</a></li>
+            <li><a href="../FCMS-HTML/TahaIndex.html">Our Team</a></li>
+            <li><a href="../FCMS-HTML/TahaIndex.html">Contact</a></li>
+                
+        </ul>
+        <a href="" class="registrationbutton">Login</a>
+    </nav> 
+   
+    
+
+    <div class="container">
+        <!-- Order Summary Box -->
+        <div class="order-summary-box">
+            <h1>Order Summary</h1>
+            <div class="customer-details">
+                <h2>
+                    Customer Details:
+                </h2>
+                <!-- Display customer details from URL parameters -->
+                <p>Name: <span id="name"></span></p>
+                <p>Event Type: <span id="event-type"></span></p>
+                <p>Event Time: <span id="event-time"></span></p>
+                <p>Event Date: <span id="event-date"></span></p>
+                <p>Delivery Address: <span id="delivery-address"></span></p>
+                <p>Number of Attendees: <span id="attendees"></span></p>
+            </div>
+
+            <div class="menu-details">
+                <div class="menu-info">
+                    <h2>
+                        Menu Details:
+                    </h2>
+                    <p>Menu ID: <span id="menu-id"></span></p>
+                    <p>Menu Choice: <span id="menu-name"></span></p>
+                </div>
+            </div>
+
+            <div class="order-total">
+                <p>Price Per Menu: 
+                    <span>
+                        RM&nbsp;<span id="menu-price"></span>
+                    </span>
+                 </p>
+                <p>Total Price: 
+                    <span>
+                        RM&nbsp;<span id="total-price"></span>
+                    </span>
+                </p>
+            </div>
+            
+            <div class="order-buttons">
+                <a href="javascript:history.back()"><button>Edit Order</button></a>
+                <button class="confirm-order-button confirm-order">Confirm Order</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <ul class="social-icon">
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-twitter"></ion-icon>
+            </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+        </ul>
+        <ul class="menu">
+            <li class="menu__item"><a class="menu__link" href="#homenav">Home</a></li>
+            <li class="menu__item"><a class="menu__link" href="#NavMenu">Menu</a></li>
+            <li class="menu__item"><a class="menu__link" href="#Navabout">About</a></li>
+            <li class="menu__item"><a class="menu__link" href="#Navteam">Our Team</a></li>
+            <li class="menu__item"><a class="menu__link" href="#Navcontact">Contact</a></li>
+        </ul>
+        
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../FCMS-JavaScripts/orderScript.js"></script>
+</body>
+</html>
